@@ -1,9 +1,17 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestArrayAsociativo {
 
+	private ArrayAsociativo array;
+	
+	@Before
+	public void init(){
+		array = new ArrayAsociativo();
+	}
+	
 	@Test
 	public void crearUnNodoVacio() {
 		Nodo nodo = new Nodo();
@@ -23,13 +31,11 @@ public class TestArrayAsociativo {
 	
 	@Test
 	public void crearUnNuevoArrayAsociativoVacio(){
-		ArrayAsociativo array = new ArrayAsociativo();
 		assertEquals(array.primerNodo, null);
 	}
 	
 	@Test
 	public void insertarPrimerNodoEnArray(){
-		ArrayAsociativo array = new ArrayAsociativo();
 		array.put("nombre", "luis");
 		assertEquals(array.primerNodo.clave, "nombre");
 		assertEquals(array.primerNodo.valor, "luis");
