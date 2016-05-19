@@ -53,5 +53,14 @@ public class TestArrayAsociativo {
 		assertEquals(current.clave, "alumno");
 		assertEquals(current.valor, "esteban");
 	}
+	
+	@Test
+	public void insertarUnSegundoParConClaveRepetida(){
+		array.put("nombre", "luis");
+		array.put("nombre", "esteban");
+		
+		assertEquals(array.primerNodo.clave, "nombre");
+		assertEquals(array.primerNodo.valor, "esteban");
+	}
 
 }
