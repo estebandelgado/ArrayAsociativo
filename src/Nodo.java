@@ -11,4 +11,10 @@ public class Nodo {
 		sig = null;
 	}
 
+	public Nodo(String cl, String vl) {
+		clave = cl;
+		valor = vl;
+		sig = null;
+	}
+
 }
