@@ -26,5 +26,13 @@ public class TestArrayAsociativo {
 		ArrayAsociativo array = new ArrayAsociativo();
 		assertEquals(array.primerNodo, null);
 	}
+	
+	@Test
+	public void insertarPrimerNodoEnArray(){
+		ArrayAsociativo array = new ArrayAsociativo();
+		array.put("nombre", "luis");
+		assertEquals(array.primerNodo.clave, "nombre");
+		assertEquals(array.primerNodo.valor, "luis");
+	}
 
 }
