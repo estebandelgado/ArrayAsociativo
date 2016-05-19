@@ -7,4 +7,8 @@ public class ArrayAsociativo {
 		primerNodo = null;
 	}
 
+	public void put(String clave, String valor) {
+		primerNodo = new Nodo("nombre", "luis");
+	}
+
 }
