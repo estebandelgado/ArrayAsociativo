@@ -20,5 +20,11 @@ public class TestArrayAsociativo {
 		assertEquals(nodo.sig, null);
 		
 	}
+	
+	@Test
+	public void crearUnNuevoArrayAsociativoVacio(){
+		ArrayAsociativo array = new ArrayAsociativo();
+		assertEquals(array.primerNodo, null);
+	}
 
 }
