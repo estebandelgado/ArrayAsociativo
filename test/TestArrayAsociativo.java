@@ -11,5 +11,14 @@ public class TestArrayAsociativo {
 		assertEquals(nodo.valor, "");
 		assertEquals(nodo.sig, null);
 	}
+	
+	@Test
+	public void crearUnNodoConDatos(){
+		Nodo nodo = new Nodo("nombre", "luis");
+		assertEquals(nodo.clave, "nombre");
+		assertEquals(nodo.valor, "luis");
+		assertEquals(nodo.sig, null);
+		
+	}
 
 }
