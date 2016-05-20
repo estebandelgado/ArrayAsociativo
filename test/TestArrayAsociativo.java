@@ -47,9 +47,8 @@ public class TestArrayAsociativo {
 		Nodo current = array.primerNodo;
 		
 		array.put("alumno", "esteban");
-		while (current.sig != null && current.clave != "alumno") current = current.sig;
-		
-		assertEquals(array.primerNodo.sig, current);
+		while (current.clave != "alumno") current = current.sig;
+
 		assertEquals(current.clave, "alumno");
 		assertEquals(current.valor, "esteban");
 	}
@@ -62,5 +61,12 @@ public class TestArrayAsociativo {
 		assertEquals(array.primerNodo.clave, "nombre");
 		assertEquals(array.primerNodo.valor, "esteban");
 	}
-
+	
+	@Test
+	public void buscarUnaClaveEnLaTabla(){
+		array.put("nombre", "luis");
+		String valor = array.getClass("nombre");
+		assertEquals("luis", valor);
+	}
+	
 }
