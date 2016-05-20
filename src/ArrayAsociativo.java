@@ -41,10 +41,30 @@ public class ArrayAsociativo {
 	}
 
 	public boolean containsKey(String cl) {
-		if (primerNodo == null) return false;
+		if (primerNodo == null)
+			return false;
 		Nodo current = primerNodo;
 		while (current.sig != null && current.clave != cl)
 			current = current.sig;
 		return (current.clave == cl);
+	}
+
+	public boolean remove(String cl) {
+		boolean borradaConExito = false;
+		if (containsKey(cl)) {
+			Nodo current = primerNodo;
+			Nodo anterior = null;
+			while (current.sig != null && current.clave != cl) {
+				anterior = current;
+				current = current.sig;
+			}
+			if (current.sig == null) {
+				primerNodo = null;
+			} else
+				anterior.sig = current.sig;
+			if (!containsKey(cl))
+				borradaConExito = true;
+		}
+		return borradaConExito;
 	}
 }
