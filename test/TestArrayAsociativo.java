@@ -118,4 +118,10 @@ public class TestArrayAsociativo {
 	public void devolverNumeroEntradasEnArrayVacio(){
 		assertEquals(0, array.size());
 	}
+	
+	@Test
+	public void devolverNumeroEntradasEnArrayConDatos(){
+		array.put("nombre", "esteban");
+		assertEquals(1, array.size());
+	}
 }
