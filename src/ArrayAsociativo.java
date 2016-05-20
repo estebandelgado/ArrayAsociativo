@@ -69,6 +69,15 @@ public class ArrayAsociativo {
 	}
 
 	public int size() {
-		return 0;
+		int numEntradas = 0;
+		if (primerNodo != null) {
+			Nodo current = primerNodo;
+			numEntradas++;
+			while (current.sig != null) {
+				numEntradas++;
+				current = current.sig;
+			}
+		}
+		return numEntradas;
 	}
 }
