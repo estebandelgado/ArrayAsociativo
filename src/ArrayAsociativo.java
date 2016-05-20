@@ -26,4 +26,10 @@ public class ArrayAsociativo {
 		return current.valor;
 	}
 
+	public String getOrElse(String cl, String valorPorDefecto) {
+		Nodo current = primerNodo;
+		while (current.sig != null && current.clave != cl) current = current.sig;
+		return current.valor;
+	}
+
 }
