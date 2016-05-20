@@ -113,4 +113,9 @@ public class TestArrayAsociativo {
 		assertTrue(entradaBorrada);
 		
 	}
+	
+	@Test
+	public void devolverNumeroEntradasEnArrayVacio(){
+		assertEquals(0, array.size());
+	}
 }
