@@ -67,4 +67,8 @@ public class ArrayAsociativo {
 		}
 		return borradaConExito;
 	}
+
+	public int size() {
+		return 0;
+	}
 }
