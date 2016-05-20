@@ -106,9 +106,11 @@ public class TestArrayAsociativo {
 	
 	@Test
 	public void borrarParConClaveEspecificada(){
-		array.put("nombre", "luis");
-		assertTrue(array.containsKey("nombre"));
-		array.remove("nombre");
-		assertFalse(array.containsKey("nombre"));
+		boolean entradaBorrada = array.remove("nombre");
+		assertFalse(entradaBorrada);
+		array.put("alumno", "esteban");
+		entradaBorrada = array.remove("alumno");
+		assertTrue(entradaBorrada);
+		
 	}
 }
