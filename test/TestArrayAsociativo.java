@@ -65,8 +65,19 @@ public class TestArrayAsociativo {
 	@Test
 	public void buscarUnaClaveEnLaTabla(){
 		array.put("nombre", "luis");
-		String valor = array.getClass("nombre");
+		String valor = array.get("nombre");
 		assertEquals("luis", valor);
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void elevarExcepcionSiLaClaveNoExiste(){
+		array.get("nombre");
+	}
+	
+	@Test
+	public void buscarClaveEnLaTablaGetOrElse(){
+		array.put("nombre", "luis");
+		String valor = array.getOrElse("nombre", "NombreDeChico");
+		assertEquals("luis", valor);
+	}
 }
