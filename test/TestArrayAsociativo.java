@@ -72,6 +72,7 @@ public class TestArrayAsociativo {
 	@Test(expected = RuntimeException.class)
 	public void elevarExcepcionSiLaClaveNoExiste(){
 		array.get("nombre");
+		
 	}
 	
 	@Test
@@ -79,5 +80,35 @@ public class TestArrayAsociativo {
 		array.put("nombre", "luis");
 		String valor = array.getOrElse("nombre", "NombreDeChico");
 		assertEquals("luis", valor);
+	}
+	
+	@Test
+	public void buscarClaveEnLaTablaYSiNoExisteDevolverValorPorDefectoGetOrElse(){
+		array.put("nombre", "luis");
+		String valor = array.getOrElse("alumno", "NombreDeChico");
+		assertEquals("NombreDeChico", valor);
+	}
+	
+	@Test
+	public void devolverBooleanoParaSaberSiLaClaveExisteSinDatosEnArray(){
+		boolean condicion = array.containsKey("sdfsdf");
+		assertFalse(condicion);
+	}
+	
+	@Test
+	public void devolverBooleanoParaSaberSiLaClaveExiste(){
+		array.put("nombre", "luis");
+		boolean condicion = array.containsKey("sdfsdf");
+		assertFalse(condicion);
+		condicion = array.containsKey("nombre");
+		assertTrue(condicion);
+	}
+	
+	@Test
+	public void borrarParConClaveEspecificada(){
+		array.put("nombre", "luis");
+		assertTrue(array.containsKey("nombre"));
+		array.remove("nombre");
+		assertFalse(array.containsKey("nombre"));
 	}
 }
